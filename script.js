@@ -1,966 +1,648 @@
 /* =========================================================
-   CLJ 1 • CRIMINAL JUSTICE REVIEWER
-   Interactive functionality
-   ========================================================= */
-
+   CLJ 1 EDUCATIONAL WEBSITE
+   JAVASCRIPT
+========================================================= */
 document.addEventListener("DOMContentLoaded", () => {
-  const body = document.body;
-
-  /* ---------- Theme ---------- */
-  const themeToggle = document.getElementById("themeToggle");
-  const themeIcon = document.getElementById("themeIcon");
-
-  const savedTheme = localStorage.getItem("clj1-theme");
-
-  if (savedTheme === "dark") {
-    body.classList.add("dark");
-  }
-
-  function updateThemeIcon() {
-    if (themeIcon) {
-      themeIcon.textContent = body.classList.contains("dark") ? "☀" : "☾";
+    /* =========================
+       ELEMENTS
+    ========================== */
+    const body = document.body;
+    const themeToggle =
+        document.getElementById("themeToggle");
+    const themeIcon =
+        document.getElementById("themeIcon");
+    const menuToggle =
+        document.getElementById("menuToggle");
+    const navLinks =
+        document.getElementById("navLinks");
+    const progressBar =
+        document.getElementById("scrollProgress");
+    const backToTop =
+        document.getElementById("backToTop");
+    const year =
+        document.getElementById("year");
+    /* =========================
+       YEAR
+    ========================== */
+    if (year) {
+        year.textContent =
+            new Date().getFullYear();
     }
-  }
-
-  updateThemeIcon();
-
-  themeToggle?.addEventListener("click", () => {
-    body.classList.toggle("dark");
-
-    localStorage.setItem(
-      "clj1-theme",
-      body.classList.contains("dark") ? "dark" : "light"
-    );
-
-    updateThemeIcon();
-  });
-
-
-  /* ---------- Reading Progress ---------- */
-
-  const progressBar = document.getElementById("progressBar");
-
-  function updateProgress() {
-    const scrollTop = window.scrollY;
-
-    const height =
-      document.documentElement.scrollHeight - window.innerHeight;
-
-    const progress =
-      height > 0 ? (scrollTop / height) * 100 : 0;
-
-    if (progressBar) {
-      progressBar.style.width = `${progress}%`;
-    }
-  }
-
-  window.addEventListener("scroll", updateProgress, {
-    passive: true
-  });
-
-  updateProgress();
-
-
-  /* ---------- Active Navigation ---------- */
-
-  const navLinks = [
-    ...document.querySelectorAll(".main-nav a[href^='#']")
-  ];
-
-  const sections = navLinks
-    .map(link =>
-      document.querySelector(link.getAttribute("href"))
-    )
-    .filter(Boolean);
-
-  const navObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-          navLinks.forEach(link =>
-            link.classList.remove("active")
-          );
-
-          const active = navLinks.find(
-            link =>
-              link.getAttribute("href") ===
-              `#${entry.target.id}`
-          );
-
-          active?.classList.add("active");
+    /* =========================
+       DARK / LIGHT MODE
+    ========================== */
+    const savedTheme =
+        localStorage.getItem("clj-theme");
+    if (savedTheme === "dark") {
+        body.classList.add("dark");
+        if (themeIcon) {
+            themeIcon.textContent = "☀";
         }
-      });
-    },
-    {
-      rootMargin: "-25% 0px -60% 0px",
-      threshold: 0
-    }
-  );
-
-  sections.forEach(section =>
-    navObserver.observe(section)
-  );
-
-
-  /* ---------- Reveal Animations ---------- */
-
-  const revealItems = document.querySelectorAll(
-    ".info-card, " +
-    ".panel, " +
-    ".history-grid article, " +
-    ".type-card, " +
-    ".compare-card, " +
-    ".agency-grid > div, " +
-    ".challenge-grid .flip-card"
-  );
-
-  revealItems.forEach(item =>
-    item.classList.add("reveal")
-  );
-
-  const revealObserver = new IntersectionObserver(
-    entries => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-          entry.target.classList.add("visible");
-
-          revealObserver.unobserve(entry.target);
+    } else {
+        if (themeIcon) {
+            themeIcon.textContent = "☾";
         }
-      });
-
-    },
-    {
-      threshold: 0.08
     }
-  );
-
-  revealItems.forEach(item =>
-    revealObserver.observe(item)
-  );
-
-
-  /* =========================================================
-     FIVE PILLARS
-     ========================================================= */
-
-  const pillarData = {
-
-    "Law Enforcement": {
-      number: "01",
-      title: "Law Enforcement",
-      text:
-        "The prime mover or initiator of the criminal justice cycle. The first pillar consists mainly of the PNP and leads in investigation, evidence gathering, and responding to violations of peace and safety."
-    },
-
-    "Prosecution": {
-      number: "02",
-      title: "Prosecution",
-      text:
-        "The second pillar of the Philippine Criminal Justice System. Use the supplied handout material as the basis for reviewing its role in the criminal justice process."
-    },
-
-    "Courts": {
-      number: "03",
-      title: "Courts",
-      text:
-        "The third pillar. Courts form part of the due-process structure through which criminal cases are considered and resolved."
-    },
-
-    "Corrections": {
-      number: "04",
-      title: "Corrections",
-      text:
-        "The fourth pillar. Corrections is one of the five components identified by the handout as part of the Philippine Criminal Justice System."
-    },
-
-    "Community": {
-      number: "05",
-      title: "Community",
-      text:
-        "The fifth pillar. The community is included in the Philippine Criminal Justice System's five-pillar structure."
-    }
-
-  };
-
-
-  const pillarDetail =
-    document.getElementById("pillarDetail");
-
-  const pillarButtons =
-    document.querySelectorAll(".pillar");
-
-
-  function selectPillar(button) {
-
-    const name = button.dataset.pillar;
-
-    const data = pillarData[name];
-
-    if (!data || !pillarDetail) return;
-
-
-    pillarButtons.forEach(btn =>
-      btn.classList.remove("selected")
-    );
-
-    button.classList.add("selected");
-
-
-    pillarDetail.innerHTML = `
-
-      <div class="detail-icon">
-        ${data.number}
-      </div>
-
-      <div>
-
-        <h3>
-          ${data.title}
-        </h3>
-
-        <p>
-          ${data.text}
-        </p>
-
-      </div>
-
-    `;
-  }
-
-
-  pillarButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-      selectPillar(button);
-    });
-
-  });
-
-
-  /* =========================================================
-     ACCORDION
-     ========================================================= */
-
-  const accordionItems =
-    document.querySelectorAll(".accordion-item");
-
-
-  accordionItems.forEach(item => {
-
-    const content =
-      item.nextElementSibling;
-
-
-    if (item.classList.contains("open")) {
-      content?.classList.add("open");
-    }
-
-
-    item.addEventListener("click", () => {
-
-      const isOpen =
-        item.classList.contains("open");
-
-
-      accordionItems.forEach(other => {
-
-        other.classList.remove("open");
-
-        other.nextElementSibling
-          ?.classList.remove("open");
-
-      });
-
-
-      if (!isOpen) {
-
-        item.classList.add("open");
-
-        content?.classList.add("open");
-
-      }
-
-    });
-
-  });
-
-
-  /* =========================================================
-     TABS
-     ========================================================= */
-
-  const tabs =
-    document.querySelectorAll(".tab");
-
-  const panels =
-    document.querySelectorAll(".tab-panel");
-
-
-  tabs.forEach(tab => {
-
-    tab.addEventListener("click", () => {
-
-      const targetId =
-        tab.dataset.tab;
-
-
-      tabs.forEach(t =>
-        t.classList.remove("active")
-      );
-
-      panels.forEach(panel =>
-        panel.classList.remove("active")
-      );
-
-
-      tab.classList.add("active");
-
-      document
-        .getElementById(targetId)
-        ?.classList.add("active");
-
-    });
-
-  });
-
-
-  /* =========================================================
-     CHALLENGE FLIP CARDS
-     ========================================================= */
-
-  document
-    .querySelectorAll(".flip-card")
-    .forEach(card => {
-
-      card.addEventListener("click", () => {
-
-        card.classList.toggle("flipped");
-
-      });
-
-
-      card.addEventListener("keydown", event => {
-
-        if (
-          event.key === "Enter" ||
-          event.key === " "
-        ) {
-
-          event.preventDefault();
-
-          card.classList.toggle("flipped");
-
+    themeToggle?.addEventListener("click", () => {
+        body.classList.toggle("dark");
+        const isDark =
+            body.classList.contains("dark");
+        localStorage.setItem(
+            "clj-theme",
+            isDark ? "dark" : "light"
+        );
+        if (themeIcon) {
+            themeIcon.textContent =
+                isDark ? "☀" : "☾";
         }
-
-      });
-
     });
-
-
-  /* =========================================================
-     QUIZ
-     ========================================================= */
-
-  const quizQuestions = [
-
-    {
-      question:
-        "Which dimension of justice focuses on fairness of the processes by which decisions are made?",
-
-      options: [
-        "Distributive Justice",
-        "Procedural Justice",
-        "Restorative Justice",
-        "Substantive Justice"
-      ],
-
-      answer: 1,
-
-      explanation:
-        "Procedural Justice focuses on the fairness of decision-making processes."
-    },
-
-
-    {
-      question:
-        "Which is identified as the prime mover or initiator of the criminal justice cycle?",
-
-      options: [
-        "Courts",
-        "Community",
-        "Law Enforcement",
-        "Corrections"
-      ],
-
-      answer: 2,
-
-      explanation:
-        "The handout identifies Law Enforcement as the prime mover or initiator."
-    },
-
-
-    {
-      question:
-        "Which is NOT listed as a valid warrantless arrest circumstance in the handout?",
-
-      options: [
-        "In flagrante delicto",
-        "Hot pursuit",
-        "Arrest of an escapee",
-        "Administrative arrest"
-      ],
-
-      answer: 3,
-
-      explanation:
-        "The three listed circumstances are in flagrante delicto, hot pursuit, and arrest of an escapee."
-    },
-
-
-    {
-      question:
-        "What does nullum crimen nulla poena sine lege mean in the handout?",
-
-      options: [
-        "Every crime requires a victim",
-        "There is no crime where there is no law punishing it",
-        "Every law requires a court order",
-        "Justice must always involve imprisonment"
-      ],
-
-      answer: 1,
-
-      explanation:
-        "The phrase means there is no crime where there is no law punishing it."
-    },
-
-
-    {
-      question:
-        "How long is a search warrant valid according to the supplied handout?",
-
-      options: [
-        "5 days",
-        "10 days",
-        "15 days",
-        "30 days"
-      ],
-
-      answer: 1,
-
-      explanation:
-        "The handout states that a search warrant has a validity period of ten (10) days."
-    },
-
-
-    {
-      question:
-        "Which historical legal foundation was signed on June 15, 1215 by King John of England?",
-
-      options: [
-        "Roman Law",
-        "Magna Carta",
-        "Canon Law",
-        "Code of Hammurabi"
-      ],
-
-      answer: 1,
-
-      explanation:
-        "The handout identifies the Magna Carta and gives June 15, 1215 as its date."
-    },
-
-
-    {
-      question:
-        "Which term refers to police inducing a person to commit a crime that would not otherwise be committed?",
-
-      options: [
-        "Entrapment",
-        "Instigation",
-        "Hot pursuit",
-        "Plain view"
-      ],
-
-      answer: 1,
-
-      explanation:
-        "The handout describes this as instigation and states that it is not valid."
-    },
-
-
-    {
-      question:
-        "Which body of law is described in the handout as a written code from the pre-Spanish era?",
-
-      options: [
-        "Maragtas Code",
-        "Magna Carta",
-        "Twelve Tables",
-        "Germanic Law"
-      ],
-
-      answer: 0,
-
-      explanation:
-        "The handout identifies the Maragtas Code as a written code in the pre-Spanish era."
-    },
-
-
-    {
-      question:
-        "Which of the following is one of the five pillars of the Philippine Criminal Justice System?",
-
-      options: [
-        "Legislature",
-        "Community",
-        "Media",
-        "Education"
-      ],
-
-      answer: 1,
-
-      explanation:
-        "The five pillars listed are Law Enforcement, Prosecution, Courts, Corrections, and Community."
-    },
-
-
-    {
-      question:
-        "Which type of due process protects individuals from unreasonable, oppressive, or arbitrary laws?",
-
-      options: [
-        "Procedural due process",
-        "Substantive due process",
-        "Administrative due process",
-        "Criminal due process"
-      ],
-
-      answer: 1,
-
-      explanation:
-        "Substantive due process concerns the law itself, regardless of the procedure used to enforce it."
-    }
-
-  ];
-
-
-  const quizContent =
-    document.getElementById("quizContent");
-
-  const questionCounter =
-    document.getElementById("questionCounter");
-
-  const quizProgress =
-    document.getElementById("quizProgress");
-
-  const scoreBadge =
-    document.getElementById("scoreBadge");
-
-  const nextQuestion =
-    document.getElementById("nextQuestion");
-
-  const restartQuiz =
-    document.getElementById("restartQuiz");
-
-
-  let currentQuestion = 0;
-
-  let score = 0;
-
-  let answered = false;
-
-
-  /* ---------- Render Question ---------- */
-
-  function renderQuestion() {
-
-    if (!quizContent) return;
-
-
-    const q =
-      quizQuestions[currentQuestion];
-
-
-    answered = false;
-
-
-    if (questionCounter) {
-
-      questionCounter.textContent =
-        `Question ${currentQuestion + 1} of ${quizQuestions.length}`;
-
-    }
-
-
-    if (quizProgress) {
-
-      quizProgress.style.width =
-        `${((currentQuestion + 1) / quizQuestions.length) * 100}%`;
-
-    }
-
-
-    if (nextQuestion) {
-      nextQuestion.disabled = true;
-    }
-
-
-    quizContent.innerHTML = `
-
-      <div class="quiz-question">
-
-        <h3>
-          ${escapeHTML(q.question)}
-        </h3>
-
-        <div class="quiz-options">
-
-          ${q.options.map((option, index) => `
-
-            <button
-              class="quiz-option"
-              type="button"
-              data-answer="${index}"
-            >
-
-              <strong>
-                ${String.fromCharCode(65 + index)}.
-              </strong>
-
-              ${escapeHTML(option)}
-
-            </button>
-
-          `).join("")}
-
-        </div>
-
-        <div
-          class="quiz-feedback"
-          id="quizFeedback"
-          aria-live="polite"
-        ></div>
-
-      </div>
-
-    `;
-
-
-    quizContent
-      .querySelectorAll(".quiz-option")
-      .forEach(option => {
-
-        option.addEventListener("click", () => {
-
-          chooseAnswer(
-            Number(option.dataset.answer)
-          );
-
+    /* =========================
+       MOBILE MENU
+    ========================== */
+    menuToggle?.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+        const opened =
+            navLinks.classList.contains("open");
+        menuToggle.textContent =
+            opened ? "✕" : "☰";
+    });
+    document.querySelectorAll(".nav-links a")
+        .forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                menuToggle.textContent = "☰";
+            });
         });
-
-      });
-
-  }
-
-
-  /* ---------- Choose Answer ---------- */
-
-  function chooseAnswer(selected) {
-
-    if (answered) return;
-
-
-    answered = true;
-
-
-    const q =
-      quizQuestions[currentQuestion];
-
-
-    const options =
-      [
-        ...quizContent.querySelectorAll(
-          ".quiz-option"
-        )
-      ];
-
-
-    const feedback =
-      document.getElementById(
-        "quizFeedback"
-      );
-
-
-    options.forEach(option => {
-
-      option.disabled = true;
-
-
-      const answerIndex =
-        Number(option.dataset.answer);
-
-
-      if (answerIndex === q.answer) {
-
-        option.classList.add(
-          "correct"
-        );
-
-      }
-
-
-      if (
-        answerIndex === selected &&
-        selected !== q.answer
-      ) {
-
-        option.classList.add(
-          "wrong"
-        );
-
-      }
-
+    /* =========================
+       SCROLL PROGRESS
+    ========================== */
+    function updateScrollProgress() {
+        const scrollTop =
+            window.scrollY;
+        const pageHeight =
+            document.documentElement.scrollHeight
+            - window.innerHeight;
+        const percentage =
+            pageHeight > 0
+                ? (scrollTop / pageHeight) * 100
+                : 0;
+        if (progressBar) {
+            progressBar.style.width =
+                ${percentage}%;
+        }
+    }
+    /* =========================
+       BACK TO TOP
+    ========================== */
+    function updateBackToTop() {
+        if (!backToTop) return;
+        if (window.scrollY > 500) {
+            backToTop.classList.add("visible");
+        } else {
+            backToTop.classList.remove("visible");
+        }
+    }
+    window.addEventListener(
+        "scroll",
+        () => {
+            updateScrollProgress();
+            updateBackToTop();
+        },
+        { passive: true }
+    );
+    backToTop?.addEventListener(
+        "click",
+        () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    );
+    /* =========================
+       PILLARS
+    ========================== */
+    const pillarButtons =
+        document.querySelectorAll(".pillar");
+    const pillarDetail =
+        document.getElementById("pillarDetail");
+    const pillarData = {
+        law: {
+            number: "01",
+            icon: "◉",
+            title: "Law Enforcement",
+            description:
+                "The prime mover of the system or the initiator of the criminal justice cycle. The handout identifies the first pillar as consisting mainly of the Philippine National Police.",
+            points: [
+                "The PNP shall take the lead in investigation and gathering of evidence.",
+                "It responds to violations of peace and safety in the community.",
+                "The handout identifies NBI, PDEA, Bureau of Customs, Bureau of Immigration, and Philippine Coast Guard among law enforcement agencies."
+            ]
+        },
+        prosecution: {
+            number: "02",
+            icon: "§",
+            title: "Prosecution",
+            description:
+                "Prosecution is identified by the handout as one of the five components of the Philippine Criminal Justice System.",
+            points: [
+                "The handout identifies Prosecution as one of the five components.",
+                "The uploaded pages do not provide a separate detailed discussion of this pillar."
+            ]
+        },
+        courts: {
+            number: "03",
+            icon: "⚖",
+            title: "Courts",
+            description:
+                "Courts are identified by the handout as one of the five components of the Philippine Criminal Justice System.",
+            points: [
+                "The handout identifies Courts as one of the five components.",
+                "The uploaded pages do not provide a separate detailed discussion of this pillar."
+            ]
+        },
+        corrections: {
+            number: "04",
+            icon: "▣",
+            title: "Corrections",
+            description:
+                "Corrections is identified by the handout as one of the five components of the Philippine Criminal Justice System.",
+            points: [
+                "The handout identifies Corrections as one of the five components.",
+                "The uploaded pages do not provide a separate detailed discussion of this pillar."
+            ]
+        },
+        community: {
+            number: "05",
+            icon: "◎",
+            title: "Community",
+            description:
+                "Community is identified by the handout as one of the five components of the Philippine Criminal Justice System.",
+            points: [
+                "The handout identifies the Community as one of the five components.",
+                "The uploaded pages do not provide a separate detailed discussion of this pillar."
+            ]
+        }
+    };
+    function renderPillar(key) {
+        const data =
+            pillarData[key];
+        if (!data || !pillarDetail) return;
+        pillarDetail.innerHTML = `
+            <span class="pillar-detail-number">
+                ${data.number}
+            </span>
+            <div class="pillar-big-icon">
+                ${data.icon}
+            </div>
+            <h3>
+                ${data.title}
+            </h3>
+            <p>
+                ${data.description}
+            </p>
+            <ul>
+                ${data.points.map(point => `
+                    <li>${point}</li>
+                `).join("")}
+            </ul>
+            <div class="source-note">
+                The uploaded handout names all five pillars but
+                provides detailed discussion in these pages mainly
+                for Law Enforcement.
+            </div>
+        `;
+    }
+    pillarButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            pillarButtons.forEach(item => {
+                item.classList.remove("active");
+            });
+            button.classList.add("active");
+            renderPillar(
+                button.dataset.pillar
+            );
+        });
     });
-
-
-    if (selected === q.answer) {
-
-      score++;
-
-
-      feedback.textContent =
-        `✓ Correct! ${q.explanation}`;
-
-      feedback.style.color =
-        "var(--success)";
-
-    } else {
-
-      feedback.textContent =
-        `✗ Not quite. ${q.explanation}`;
-
-      feedback.style.color =
-        "var(--danger)";
-
+    /* =========================
+       ARREST TABS
+    ========================== */
+    const tabs =
+        document.querySelectorAll(".tab");
+    const panels =
+        document.querySelectorAll(".tab-panel");
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            const target =
+                tab.dataset.tab;
+            tabs.forEach(item => {
+                item.classList.remove("active");
+            });
+            panels.forEach(panel => {
+                panel.classList.remove("active");
+            });
+            tab.classList.add("active");
+            const selected =
+                document.getElementById(target);
+            selected?.classList.add("active");
+        });
+    });
+    /* =========================
+       REVEAL ON SCROLL
+    ========================== */
+    const revealElements =
+        document.querySelectorAll(".reveal");
+    const revealObserver =
+        new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+                    }
+                });
+            },
+            {
+                threshold: 0.12
+            }
+        );
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+    /* =========================
+       QUIZ DATA
+       
+       Correct answers are stored
+       internally so the site can
+       calculate the score.
+    ========================== */
+    const quizQuestions = [
+        {
+            question:
+                "What is crime according to the handout?",
+            options: [
+                "An act or omission punishable by public laws.",
+                "Any disagreement between two persons.",
+                "A private rule created by a community.",
+                "Any act that receives social criticism."
+            ],
+            answer: 0
+        },
+        {
+            question:
+                "Which term refers to violations of the Revised Penal Code?",
+            options: [
+                "Felonies",
+                "Offenses",
+                "Delinquency",
+                "Infractions or Misdemeanors"
+            ],
+            answer: 0
+        },
+        {
+            question:
+                "Which three branches of government are identified in the handout as co-equal and observing separation of powers?",
+            options: [
+                "Executive, Legislative and Judiciary",
+                "Police, Courts and Corrections",
+                "Executive, Police and Community",
+                "Legislative, Police and Prosecution"
+            ],
+            answer: 0
+        },
+        {
+            question:
+                "Which is described in the handout as the first known body of law, promulgated by King Hammurabi of ancient Babylon?",
+            options: [
+                "Code of Hammurabi",
+                "Roman Law",
+                "Common Law",
+                "Magna Carta"
+            ],
+            answer: 0
+        },
+        {
+            question:
+                "Which statement describes justice according to the handout?",
+            options: [
+                "The act of rendering what are due and treating persons equally.",
+                "The punishment of every person accused of an offense.",
+                "The investigation of every reported crime.",
+                "The creation of rules by law enforcement agencies."
+            ],
+            answer: 0
+        },
+        {
+            question:
+                "Which dimension of justice focuses on the fairness of the processes by which decisions are made?",
+            options: [
+                "Procedural Justice",
+                "Distributive Justice",
+                "Restorative Justice",
+                "Substantive Justice"
+            ],
+            answer: 0
+        },
+        {
+            question:
+                "Which list contains the five components of the Philippine Criminal Justice System identified in the handout?",
+            options: [
+                "Law Enforcement, Prosecution, Courts, Corrections and Community",
+                "Law Enforcement, Military, Senate, Corrections and Community",
+                "Police, Congress, Courts, Jail and Community",
+                "Law Enforcement, Prosecution, Military, Courts and Jail"
+            ],
+            answer: 0
+        },
+        {
+            question:
+                "Which of the following is identified as a valid warrantless arrest?",
+            options: [
+                "In flagrante delicto arrest",
+                "Arrest based only on an anonymous rumor",
+                "Arrest based only on a personal disagreement",
+                "Arrest without any identified circumstance"
+            ],
+            answer: 0
+        },
+        {
+            question:
+                "According to the handout, what is the validity period of a search warrant?",
+            options: [
+                "Ten (10) days",
+                "Five (5) days",
+                "Thirty (30) days",
+                "One (1) year"
+            ],
+            answer: 0
+        },
+        {
+            question:
+                "What is the distinction given in the handout between instigation and entrapment?",
+            options: [
+                "Instigation induces a person to commit a crime, while entrapment uses means to catch a person who has already committed a crime.",
+                "Instigation and entrapment are described as exactly the same.",
+                "Instigation refers to search, while entrapment refers to seizure.",
+                "Instigation applies only to warrants, while entrapment applies only to courts."
+            ],
+            answer: 0
+        }
+    ];
+    /* =========================
+       QUIZ VARIABLES
+    ========================== */
+    let currentQuestion = 0;
+    let score = 0;
+    let answered = false;
+    const quizContent =
+        document.getElementById("quizContent");
+    const questionCounter =
+        document.getElementById("questionCounter");
+    const scoreDisplay =
+        document.getElementById("score");
+    const quizProgress =
+        document.getElementById("quizProgress");
+    const nextQuestion =
+        document.getElementById("nextQuestion");
+    const restartQuiz =
+        document.getElementById("restartQuiz");
+    /* =========================
+       RENDER QUESTION
+    ========================== */
+    function renderQuestion() {
+        if (!quizContent) return;
+        answered = false;
+        nextQuestion.disabled = true;
+        nextQuestion.textContent =
+            currentQuestion === quizQuestions.length - 1
+                ? "See Results →"
+                : "Next Question →";
+        const item =
+            quizQuestions[currentQuestion];
+        questionCounter.textContent =
+            Question ${currentQuestion + 1} of ${quizQuestions.length};
+        const percentage =
+            ((currentQuestion + 1) /
+                quizQuestions.length) * 100;
+        quizProgress.style.width =
+            ${percentage}%;
+        quizContent.innerHTML = `
+            <div class="question-box">
+                <span class="question-number">
+                    QUESTION ${String(currentQuestion + 1).padStart(2, "0")}
+                </span>
+                <h3>
+                    ${item.question}
+                </h3>
+                <div class="options">
+                    ${item.options.map((option, index) => `
+                        <button
+                            class="option"
+                            data-index="${index}"
+                        >
+                            <span class="option-letter">
+                                ${String.fromCharCode(65 + index)}
+                            </span>
+                            <span>
+                                ${option}
+                            </span>
+                        </button>
+                    `).join("")}
+                </div>
+                <div
+                    class="quiz-feedback hidden"
+                    id="quizFeedback"
+                ></div>
+            </div>
+        `;
+        document
+            .querySelectorAll(".option")
+            .forEach(option => {
+                option.addEventListener(
+                    "click",
+                    () => selectAnswer(option)
+                );
+            });
     }
-
-
-    if (scoreBadge) {
-
-      scoreBadge.textContent =
-        `Score: ${score}`;
-
+    /* =========================
+       SELECT ANSWER
+    ========================== */
+    function selectAnswer(selectedOption) {
+        if (answered) return;
+        answered = true;
+        const selectedIndex =
+            Number(selectedOption.dataset.index);
+        const correctIndex =
+            quizQuestions[currentQuestion].answer;
+        const options =
+            document.querySelectorAll(".option");
+        options.forEach(option => {
+            option.disabled = true;
+        });
+        if (selectedIndex === correctIndex) {
+            selectedOption.classList.add("correct");
+            score++;
+            scoreDisplay.textContent =
+                score;
+        } else {
+            selectedOption.classList.add("wrong");
+        }
+        const feedback =
+            document.getElementById("quizFeedback");
+        if (feedback) {
+            feedback.classList.remove("hidden");
+            if (selectedIndex === correctIndex) {
+                feedback.textContent =
+                    "Correct! Your answer matches the information presented in the handout.";
+            } else {
+                feedback.textContent =
+                    "Not quite. Review the topic in the reviewer and continue to the next question.";
+            }
+        }
+        nextQuestion.disabled = false;
     }
-
-
-    if (nextQuestion) {
-
-      nextQuestion.disabled = false;
-
+    /* =========================
+       NEXT QUESTION
+    ========================== */
+    nextQuestion?.addEventListener(
+        "click",
+        () => {
+            if (!answered) return;
+            if (
+                currentQuestion <
+                quizQuestions.length - 1
+            ) {
+                currentQuestion++;
+                renderQuestion();
+                return;
+            }
+            showResults();
+        }
+    );
+    /* =========================
+       RESULTS
+    ========================== */
+    function showResults() {
+        const percentage =
+            Math.round(
+                (score / quizQuestions.length) * 100
+            );
+        let message = "";
+        if (percentage === 100) {
+            message =
+                "Excellent! You answered every question correctly.";
+        } else if (percentage >= 80) {
+            message =
+                "Great work! You demonstrated strong understanding of the reviewer.";
+        } else if (percentage >= 60) {
+            message =
+                "Good effort! Review the handout once more to strengthen your understanding.";
+        } else {
+            message =
+                "Keep studying! Revisit the sections above and try the quiz again.";
+        }
+        quizContent.innerHTML = `
+            <div class="result-card">
+                <div class="result-score">
+                    ${percentage}%
+                </div>
+                <h3>
+                    Quiz Complete
+                </h3>
+                <p>
+                    You scored
+                    <strong>${score}</strong>
+                    out of
+                    <strong>${quizQuestions.length}</strong>.
+                </p>
+                <p style="margin-top:10px;">
+                    ${message}
+                </p>
+            </div>
+        `;
+        questionCounter.textContent =
+            "Quiz Finished";
+        quizProgress.style.width =
+            "100%";
+        nextQuestion.classList.add("hidden");
+        restartQuiz.classList.remove("hidden");
     }
-
-  }
-
-
-  /* ---------- Show Quiz Result ---------- */
-
-  function showResult() {
-
-    if (!quizContent) return;
-
-
-    const percentage =
-      Math.round(
-        (score / quizQuestions.length) * 100
-      );
-
-
-    if (questionCounter) {
-
-      questionCounter.textContent =
-        "Quiz complete";
-
-    }
-
-
-    if (quizProgress) {
-
-      quizProgress.style.width =
-        "100%";
-
-    }
-
-
-    quizContent.innerHTML = `
-
-      <div class="quiz-result">
-
-        <span class="eyebrow">
-          Knowledge check finished
-        </span>
-
-        <h3>
-          Your result
-        </h3>
-
-        <span class="result-score">
-          ${score}/${quizQuestions.length}
-        </span>
-
-        <p>
-          You answered ${percentage}% of the
-          questions correctly.
-        </p>
-
-        <p class="muted">
-          Review the sections above and try
-          again to reinforce recall.
-        </p>
-
-      </div>
-
-    `;
-
-
-    if (nextQuestion) {
-
-      nextQuestion.disabled = true;
-
-    }
-
-  }
-
-
-  /* ---------- Next Question ---------- */
-
-  function goNext() {
-
-    if (!answered) return;
-
-
-    if (
-      currentQuestion <
-      quizQuestions.length - 1
-    ) {
-
-      currentQuestion++;
-
-      renderQuestion();
-
-    } else {
-
-      showResult();
-
-    }
-
-  }
-
-
-  /* ---------- Restart Quiz ---------- */
-
-  function restart() {
-
-    currentQuestion = 0;
-
-    score = 0;
-
-    answered = false;
-
-
-    if (scoreBadge) {
-
-      scoreBadge.textContent =
-        "Score: 0";
-
-    }
-
-
+    /* =========================
+       RESTART QUIZ
+    ========================== */
+    restartQuiz?.addEventListener(
+        "click",
+        () => {
+            currentQuestion = 0;
+            score = 0;
+            answered = false;
+            scoreDisplay.textContent =
+                "0";
+            nextQuestion.classList.remove(
+                "hidden"
+            );
+            restartQuiz.classList.add(
+                "hidden"
+            );
+            renderQuestion();
+            document
+                .getElementById("quiz")
+                ?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+        }
+    );
+    /* =========================
+       INITIALIZE QUIZ
+    ========================== */
     renderQuestion();
-
-  }
-
-
-  nextQuestion?.addEventListener(
-    "click",
-    goNext
-  );
-
-
-  restartQuiz?.addEventListener(
-    "click",
-    restart
-  );
-
-
-  /* ---------- Escape HTML ---------- */
-
-  function escapeHTML(value) {
-
-    return String(value)
-
-      .replaceAll("&", "&amp;")
-
-      .replaceAll("<", "&lt;")
-
-      .replaceAll(">", "&gt;")
-
-      .replaceAll('"', "&quot;")
-
-      .replaceAll("'", "&#039;");
-
-  }
-
-
-  /* Start Quiz */
-
-  renderQuestion();
-
-
-  /* =========================================================
-     BACK TO TOP
-     ========================================================= */
-
-  const backTop =
-    document.getElementById("backTop");
-
-
-  backTop?.addEventListener("click", () => {
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+    /* =========================
+       ACTIVE NAVIGATION
+    ========================== */
+    const sections =
+        document.querySelectorAll(
+            "main section[id]"
+        );
+    const navAnchors =
+        document.querySelectorAll(
+            ".nav-links a"
+        );
+    const sectionObserver =
+        new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+                    navAnchors.forEach(anchor => {
+                        anchor.classList.remove(
+                            "active-nav"
+                        );
+                        if (
+                            anchor.getAttribute("href") ===
+                            #${entry.target.id}
+                        ) {
+                            anchor.classList.add(
+                                "active-nav"
+                            );
+                        }
+                    });
+                });
+            },
+            {
+                rootMargin:
+                    "-30% 0px -60% 0px"
+            }
+        );
+    sections.forEach(section => {
+        sectionObserver.observe(section);
     });
-
-  });
-
-
-  /* =========================================================
-     KEYBOARD SHORTCUT
-     Press T to change theme
-     ========================================================= */
-
-  document.addEventListener(
-    "keydown",
-    event => {
-
-      if (
-        event.key.toLowerCase() === "t" &&
-        !["INPUT", "TEXTAREA"].includes(
-          document.activeElement?.tagName
-        )
-      ) {
-
-        themeToggle?.click();
-
-      }
-
-    }
-  );
-
+    /* =========================
+       INITIAL SCROLL UPDATE
+    ========================== */
+    updateScrollProgress();
+    updateBackToTop();
 });
