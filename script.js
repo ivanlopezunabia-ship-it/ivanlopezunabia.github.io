@@ -381,7 +381,7 @@ document.addEventListener("DOMContentLoaded", () => {
             text:
                 "The prosecution is the gate keepers or criminal justice system, this second pillar is primarily concerned with the investigation of the complaint filed before its office.",
             bullets: [
-                "Prosecution is the process wherein the accusation is brough before the court.",
+                "Prosecution is the process wherein the accusation is brought before the court.",
                 "It also determine the guilt or innocence of the accused.",
                 "The prosecution ensure that the persons are tried in court of law and sentenced if convicted."
             ]
@@ -392,7 +392,7 @@ document.addEventListener("DOMContentLoaded", () => {
             title: "Courts",
             icon: "§",
             text:
-                "Court is the body to which the public administration of justice is delegated, being a tribunal officially assembled under authority of law at the approlriate time and place for the administration of justice through which the stae enforces its sovereign rights and powers.",
+                "Court is the body to which the public administration of justice is delegated, being a tribunal officially assembled under authority of law at the appropriate time and place for the administration of justice through which the state enforces its sovereign rights and powers.",
             bullets: [
                 "Courts is the third pillar of criminal justice system.",
                 "The courts known as the corner stone of criminal justice system",
@@ -407,8 +407,8 @@ document.addEventListener("DOMContentLoaded", () => {
             text:
                 "The branch of justice administration that handles individuals after they found guilty and sentenced by the court.",
             bullets: [
-                "There main goal is to  punish wrongdoers while reforming them so they can return to society..",
-                "Correction is responsible for the custody,supervision, and rehabilitation of convicted offenders",
+                "There main goal is to  punish wrongdoers while reforming them so they can return to society.",
+                "Correction is responsible for the custody,supervision, and rehabilitation of convicted offenders.",
                 "Bureau of Corrections(BuCor) is the agencies involved."
             ]
         },
