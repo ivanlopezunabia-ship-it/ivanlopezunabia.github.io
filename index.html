@@ -1,1713 +1,1173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Educational reviewer based only on the provided CLJ 1 handouts."
-  />
-  <title>CLJ 1 • Criminal Justice Reviewer</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Educational reviewer for CLJ 1 - Introduction to Philippine Criminal Justice System."
+    >
+    <title>CLJ 1 | Philippine Criminal Justice System</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <div class="progress-bar" id="progressBar"></div>
-
-  <!-- ================= HEADER ================= -->
-  <header class="site-header">
-
-    <div class="brand">
-      <div class="brand-mark">CJ</div>
-
-      <div>
-        <strong>CLJ 1</strong>
-        <span>Criminal Justice Reviewer</span>
-      </div>
-    </div>
-
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="#overview">Overview</a>
-      <a href="#pillars">Five Pillars</a>
-      <a href="#arrest">Arrest</a>
-      <a href="#structures">Structures</a>
-      <a href="#challenge">Challenge</a>
-      <a href="#quiz">Quiz</a>
-      <a href="#reference">Reference</a>
-
-      <button
-        class="theme-btn"
-        id="themeToggle"
-        type="button"
-        aria-label="Toggle light and dark mode"
-      >
-        <span id="themeIcon">☾</span>
-        <span>Theme</span>
-      </button>
-    </nav>
-
-  </header>
-
-
-  <main>
-
-    <!-- ================= OVERVIEW ================= -->
-    <section class="hero" id="overview">
-
-      <div class="hero-copy">
-
-        <span class="eyebrow">
-          CLJ 1 • Intro. To Philippine Criminal Justice System
-        </span>
-
-        <h1>
-          Historical Development &amp; Principles of Criminal Justice
-        </h1>
-
-        <p>
-          An interactive study guide built strictly from the supplied
-          classroom handouts. Review concepts, compare structures, study
-          arrest and search rules, and test recall.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="#pillars">
-            Start Reviewing
-          </a>
-
-          <a class="btn secondary" href="#quiz">
-            Take the Quiz
-          </a>
-        </div>
-
-        <div class="source-chip">
-          <span class="dot"></span>
-          Source-limited: provided handouts only
-        </div>
-
-      </div>
-
-
-      <div class="hero-visual" aria-label="Criminal justice study map">
-
-        <div class="orbit-card card-a">
-          <b>LAW</b>
-          <span>Rules of conduct</span>
-        </div>
-
-        <div class="orbit-card card-b">
-          <b>JUSTICE</b>
-          <span>Due process &amp; equality</span>
-        </div>
-
-        <div class="orbit-card card-c">
-          <b>CJS</b>
-          <span>Five-pillar system</span>
-        </div>
-
-        <div class="core">
-          <span>CLJ 1</span>
-          <strong>Justice</strong>
-          <small>Study Map</small>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= CORE CONCEPTS ================= -->
-    <section class="section" id="concepts">
-
-      <div class="section-heading">
-
-        <div>
-          <span class="eyebrow">01 • Core concepts</span>
-
-          <h2>
-            Crime, law, justice &amp; victims
-          </h2>
-        </div>
-
-        <p>
-          Use the cards as quick-review notes before moving
-          to the system structure.
-        </p>
-
-      </div>
-
-
-      <div class="card-grid four">
-
-        <article class="info-card">
-
-          <div class="icon">⚖</div>
-
-          <h3>What is Crime?</h3>
-
-          <p>
-            Crime is an act or omission punishable by public laws.
-          </p>
-
-          <ul>
-            <li>
-              <b>Felonies:</b>
-              violations of the Revised Penal Code.
-            </li>
-
-            <li>
-              <b>Offenses:</b>
-              violations of statutes or Special Laws.
-            </li>
-
-            <li>
-              <b>Infraction/Misdemeanor:</b>
-              violations of ordinances.
-            </li>
-
-            <li>
-              <b>Delinquency:</b>
-              violations committed by minor offenders.
-            </li>
-          </ul>
-
-        </article>
-
-
-        <article class="info-card">
-
-          <div class="icon">§</div>
-
-          <h3>Law before crime</h3>
-
-          <p>
-            <i>Nullum crimen nulla poena sine lege</i>
-            means there is no crime where there is no law
-            punishing it.
-          </p>
-
-          <div class="mini-note">
-            Crime is a product of the law.
-          </div>
-
-        </article>
-
-
-        <article class="info-card">
-
-          <div class="icon">≡</div>
-
-          <h3>Justice</h3>
-
-          <p>
-            Justice is the act of rendering what are due and
-            treating persons equally, with persons falling within
-            the same classification.
-          </p>
-
-          <div class="mini-note">
-            Due process is required for justice to be realized.
-          </div>
-
-        </article>
-
-
-        <article class="info-card">
-
-          <div class="icon">◉</div>
-
-          <h3>Victim</h3>
-
-          <p>
-            Victimology is the scientific study of criminal
-            victimization, its consequences, and society's
-            reactions to it.
-          </p>
-
-          <div class="tag-row">
-            <span>Primary</span>
-            <span>Secondary</span>
-            <span>Tertiary</span>
-          </div>
-
-        </article>
-
-      </div>
-
-
-      <div class="split-grid">
-
-        <article class="panel">
-
-          <div class="panel-title">
-            <span class="number">A</span>
-            <h3>Three dimensions of justice</h3>
-          </div>
-
-          <div class="timeline">
-
-            <div>
-              <span>1</span>
-
-              <div>
-                <b>Procedural Justice</b>
-
-                <p>
-                  Focuses on fairness of the processes
-                  by which decisions are made.
-                </p>
-              </div>
+    <!-- =========================
+         SCROLL PROGRESS
+    ========================== -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+    <header class="header" id="top">
+        <nav class="navbar">
+            <a href="#overview" class="brand">
+                <span class="brand-icon">⚖</span>
+                <span>
+                    <strong>CLJ 1</strong>
+                    <small>Criminal Justice System</small>
+                </span>
+            </a>
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="#overview">Overview</a>
+                <a href="#history">History</a>
+                <a href="#pillars">Five Pillars</a>
+                <a href="#arrest">Arrest</a>
+                <a href="#evolution">Evolution</a>
+                <a href="#legal-foundation">Legal Foundation</a>
+                <a href="#quiz">Quiz</a>
+                <a href="#reference">Reference</a>
+                <a href="#creators">Creators</a>
+                <button
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="Toggle dark mode"
+                    title="Toggle light/dark mode"
+                >
+                    <span id="themeIcon">☾</span>
+                </button>
             </div>
-
-
-            <div>
-              <span>2</span>
-
-              <div>
-                <b>Distributive Justice</b>
-
-                <p>
-                  Pertains to the fair allocation
-                  of resources and penalties.
+        </nav>
+    </header>
+    <!-- =========================
+         HERO / OVERVIEW
+    ========================== -->
+    <main>
+        <section class="hero" id="overview">
+            <div class="hero-background"></div>
+            <div class="hero-content reveal">
+                <div class="eyebrow">
+                    <span></span>
+                    CLJ 1 • INTRODUCTION TO PHILIPPINE CRIMINAL JUSTICE SYSTEM
+                </div>
+                <h1>
+                    Historical Development
+                    <span>&</span>
+                    Principles of Criminal Justice
+                </h1>
+                <p class="hero-description">
+                    An interactive educational reviewer based exclusively
+                    on the provided CLJ 1 handout.
                 </p>
-              </div>
+                <div class="hero-buttons">
+                    <a href="#history" class="btn btn-primary">
+                        Start Learning
+                        <span>→</span>
+                    </a>
+                    <a href="#quiz" class="btn btn-secondary">
+                        Take Knowledge Quiz
+                    </a>
+                </div>
+                <div class="hero-facts">
+                    <div>
+                        <strong>5</strong>
+                        <span>Criminal Justice Pillars</span>
+                    </div>
+                    <div>
+                        <strong>3</strong>
+                        <span>Dimensions of Justice</span>
+                    </div>
+                    <div>
+                        <strong>10</strong>
+                        <span>Quiz Questions</span>
+                    </div>
+                </div>
             </div>
-
-
-            <div>
-              <span>3</span>
-
-              <div>
-                <b>Restorative Justice</b>
-
+            <div class="hero-visual reveal">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="hero-shield">
+                    <div class="shield-symbol">⚖</div>
+                    <span>JUSTICE</span>
+                </div>
+                <div class="floating-card card-one">
+                    <span>01</span>
+                    <strong>Law</strong>
+                    <small>Crime & Justice</small>
+                </div>
+                <div class="floating-card card-two">
+                    <span>02</span>
+                    <strong>Justice</strong>
+                    <small>Due Process</small>
+                </div>
+                <div class="floating-card card-three">
+                    <span>03</span>
+                    <strong>Criminal Justice</strong>
+                    <small>Five Pillars</small>
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+             QUICK OVERVIEW
+        ========================== -->
+        <section class="section" id="overview-content">
+            <div class="section-heading reveal">
+                <span class="section-number">01</span>
+                <div>
+                    <p class="section-label">FOUNDATION</p>
+                    <h2>
+                        Understanding Crime,
+                        Law & Justice
+                    </h2>
+                    <p>
+                        The handout begins with the relationship between
+                        law and crime and explains the basic concepts used
+                        throughout the criminal justice system.
+                    </p>
+                </div>
+            </div>
+            <div class="concept-grid">
+                <article class="info-card reveal">
+                    <div class="card-icon">⚖</div>
+                    <h3>What is Crime?</h3>
+                    <p>
+                        Crime is an act or omission punishable by public laws.
+                    </p>
+                </article>
+                <article class="info-card reveal">
+                    <div class="card-icon">§</div>
+                    <h3>Law</h3>
+                    <p>
+                        Law is that which is laid down, established or decreed.
+                        Most laws are penal in nature and define crime,
+                        treat of its nature, and provide penalties.
+                    </p>
+                </article>
+                <article class="info-card reveal">
+                    <div class="card-icon">∞</div>
+                    <h3>Nullum Crimen</h3>
+                    <p>
+                        <em>Nullum crimen nulla poena sine lege</em> means
+                        there is no crime where there is no law punishing it.
+                    </p>
+                </article>
+                <article class="info-card reveal">
+                    <div class="card-icon">⚑</div>
+                    <h3>Justice</h3>
+                    <p>
+                        Justice is the act of rendering what are due and
+                        treating persons equally, with persons falling
+                        within the same classification.
+                    </p>
+                </article>
+            </div>
+            <div class="crime-terms reveal">
+                <div class="subheading">
+                    <span></span>
+                    FOUR SPECIFIC TERMS OF CRIME
+                </div>
+                <div class="term-grid">
+                    <div class="term">
+                        <span>A</span>
+                        <div>
+                            <h4>Felonies</h4>
+                            <p>
+                                Violations of the Revised Penal Code.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="term">
+                        <span>B</span>
+                        <div>
+                            <h4>Offenses</h4>
+                            <p>
+                                Violations of statutes or special laws.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="term">
+                        <span>C</span>
+                        <div>
+                            <h4>Infraction or Misdemeanor</h4>
+                            <p>
+                                Violations of ordinances.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="term">
+                        <span>D</span>
+                        <div>
+                            <h4>Delinquency</h4>
+                            <p>
+                                Violations committed by minor offenders.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+             HISTORY
+        ========================== -->
+        <section class="section section-dark" id="history">
+            <div class="section-heading light reveal">
+                <span class="section-number">02</span>
+                <div>
+                    <p class="section-label">HISTORICAL DEVELOPMENT</p>
+                    <h2>
+                        Criminal, Victim &
+                        Justice Concepts
+                    </h2>
+                    <p>
+                        These concepts describe how people and justice are
+                        referred to at different stages of the criminal
+                        justice system.
+                    </p>
+                </div>
+            </div>
+            <div class="history-grid">
+                <article class="dark-card reveal">
+                    <span class="mini-label">CRIMINAL</span>
+                    <h3>
+                        Terms Used in the Justice System
+                    </h3>
+                    <div class="timeline-list">
+                        <div>
+                            <strong>Criminological Sense</strong>
+                            <p>
+                                A person who committed a crime regardless
+                                whether it was reported or referred.
+                            </p>
+                        </div>
+                        <div>
+                            <strong>Legal Sense</strong>
+                            <p>
+                                A person who was found guilty beyond
+                                reasonable doubt.
+                            </p>
+                        </div>
+                        <div>
+                            <strong>Person of Interest</strong>
+                            <p>
+                                Used when there are several suspicious persons.
+                            </p>
+                        </div>
+                        <div>
+                            <strong>Suspect</strong>
+                            <p>
+                                Used when there is one suspected person left.
+                            </p>
+                        </div>
+                        <div>
+                            <strong>Respondent</strong>
+                            <p>
+                                Used when the matter is within the level
+                                of the prosecution.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+                <article class="dark-card reveal">
+                    <span class="mini-label">VICTIM</span>
+                    <h3>
+                        Victimology
+                    </h3>
+                    <p>
+                        Victimology is the scientific study of the extent,
+                        nature and causes of criminal victimization,
+                        its consequences for persons involved, and society's
+                        reactions thereto.
+                    </p>
+                    <div class="victim-types">
+                        <span>01 Primary Victim</span>
+                        <span>02 Secondary Victim</span>
+                        <span>03 Tertiary Victim</span>
+                    </div>
+                </article>
+            </div>
+            <div class="victimless reveal">
+                <div>
+                    <span class="mini-label">VICTIMLESS CRIMES</span>
+                    <h3>
+                        Crimes against the law without a private offended party
+                    </h3>
+                    <p>
+                        These are crimes against the law that only harm the
+                        individual who consented to engage in them. There is
+                        no private offended party in these crimes.
+                    </p>
+                </div>
+                <div class="example-tags">
+                    <span>Gambling</span>
+                    <span>Prostitution</span>
+                    <span>Possession of Firearms</span>
+                    <span>Drug-related Cases</span>
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+             JUSTICE & DUE PROCESS
+        ========================== -->
+        <section class="section">
+            <div class="section-heading reveal">
+                <span class="section-number">03</span>
+                <div>
+                    <p class="section-label">PRINCIPLES</p>
+                    <h2>
+                        Justice & Due Process
+                    </h2>
+                    <p>
+                        The handout connects justice with due process and
+                        explains three dimensions of justice.
+                    </p>
+                </div>
+            </div>
+            <div class="justice-grid">
+                <article class="justice-card reveal">
+                    <span>01</span>
+                    <h3>Procedural Justice</h3>
+                    <p>
+                        Focuses on the fairness of the processes by which
+                        decisions are made.
+                    </p>
+                </article>
+                <article class="justice-card reveal">
+                    <span>02</span>
+                    <h3>Distributive Justice</h3>
+                    <p>
+                        Pertains to the fair allocation of resources
+                        and penalties.
+                    </p>
+                </article>
+                <article class="justice-card reveal">
+                    <span>03</span>
+                    <h3>Restorative Justice</h3>
+                    <p>
+                        Emphasizes repairing harm caused by criminal behavior
+                        and fostering reconciliation between offenders
+                        and victims.
+                    </p>
+                </article>
+            </div>
+            <div class="due-process reveal">
+                <div class="due-main">
+                    <span class="section-label">
+                        DUE PROCESS
+                    </span>
+                    <h3>
+                        Two Kinds of Due Process
+                    </h3>
+                    <div class="due-item">
+                        <strong>Procedural Due Process</strong>
+                        <p>
+                            Ensures that the procedures and methods used by
+                            government before depriving a person of life,
+                            liberty or property are fair and just.
+                        </p>
+                        <small>
+                            Essential elements: Notice and Hearing
+                        </small>
+                    </div>
+                    <div class="due-item">
+                        <strong>Substantive Due Process</strong>
+                        <p>
+                            Protects individuals from unreasonable,
+                            oppressive, or arbitrary laws, regardless of
+                            the procedure used to enforce them.
+                        </p>
+                    </div>
+                </div>
+                <div class="constitution-box">
+                    <div class="constitution-symbol">§</div>
+                    <h3>1987 Philippine Constitution</h3>
+                    <p>
+                        Under Sec. 1, Art. III, no person shall be deprived
+                        of life, liberty or property without due process of
+                        law, nor shall a person be deprived of the equal
+                        protection of law.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+             FIVE PILLARS
+        ========================== -->
+        <section class="section section-blue" id="pillars">
+            <div class="section-heading light reveal">
+                <span class="section-number">04</span>
+                <div>
+                    <p class="section-label">PHILIPPINE CJS</p>
+                    <h2>
+                        The Five Pillars
+                    </h2>
+                    <p>
+                        The handout identifies five components of the
+                        Philippine Criminal Justice System.
+                    </p>
+                </div>
+            </div>
+            <div class="pillar-layout">
+                <div class="pillar-menu">
+                    <button class="pillar active" data-pillar="law">
+                        <span>01</span>
+                        <strong>Law Enforcement</strong>
+                    </button>
+                    <button class="pillar" data-pillar="prosecution">
+                        <span>02</span>
+                        <strong>Prosecution</strong>
+                    </button>
+                    <button class="pillar" data-pillar="courts">
+                        <span>03</span>
+                        <strong>Courts</strong>
+                    </button>
+                    <button class="pillar" data-pillar="corrections">
+                        <span>04</span>
+                        <strong>Corrections</strong>
+                    </button>
+                    <button class="pillar" data-pillar="community">
+                        <span>05</span>
+                        <strong>Community</strong>
+                    </button>
+                </div>
+                <div class="pillar-detail" id="pillarDetail">
+                    <span class="pillar-detail-number">01</span>
+                    <div class="pillar-big-icon">◉</div>
+                    <h3>Law Enforcement</h3>
+                    <p>
+                        The prime mover of the system or the initiator
+                        of the criminal justice cycle. The handout identifies
+                        the first pillar as consisting mainly of the
+                        Philippine National Police.
+                    </p>
+                    <ul>
+                        <li>
+                            The PNP shall take the lead in investigation
+                            and gathering of evidence.
+                        </li>
+                        <li>
+                            It responds to violations of peace and safety
+                            in the community.
+                        </li>
+                        <li>
+                            The handout also identifies NBI, PDEA,
+                            Bureau of Customs, Bureau of Immigration,
+                            and Philippine Coast Guard among law
+                            enforcement agencies.
+                        </li>
+                    </ul>
+                    <div class="source-note">
+                        The uploaded handout names all five pillars but
+                        provides detailed discussion in these pages mainly
+                        for Law Enforcement.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+             CRIMINAL JUSTICE SYSTEM
+        ========================== -->
+        <section class="section">
+            <div class="system-card reveal">
+                <div class="system-heading">
+                    <span class="section-label">
+                        CRIMINAL JUSTICE SYSTEM
+                    </span>
+                    <h2>
+                        A Social Institution and a System
+                    </h2>
+                </div>
+                <div class="system-columns">
+                    <div>
+                        <span class="system-number">01</span>
+                        <h3>As a Social Institution</h3>
+                        <p>
+                            CJS attempts to meet society's needs
+                            for law and order.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="system-number">02</span>
+                        <h3>As a System</h3>
+                        <p>
+                            CJS depends on due process involving
+                            the five pillars.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="system-number">03</span>
+                        <h3>Comparative Criminal Justice</h3>
+                        <p>
+                            Looks into different model countries to
+                            investigate and evaluate a national system
+                            of justice in terms of criminal justice
+                            process, culture and institutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+             ARREST
+        ========================== -->
+        <section class="section section-dark" id="arrest">
+            <div class="section-heading light reveal">
+                <span class="section-number">05</span>
+                <div>
+                    <p class="section-label">LAW ENFORCEMENT</p>
+                    <h2>
+                        Arrest & Search
+                    </h2>
+                    <p>
+                        Explore the arrest concepts and search-and-seizure
+                        information contained in the handout.
+                    </p>
+                </div>
+            </div>
+            <div class="arrest-definition reveal">
+                <span class="mini-label">ARREST</span>
+                <h3>
+                    Taking a person into custody of the law
+                </h3>
                 <p>
-                  Emphasizes repairing harm and fostering
-                  reconciliation among offenders, victims,
-                  and the community.
+                    Arrest is a taking of a person into custody of the law
+                    so that the person may be bound to answer for the
+                    commission of an offense.
                 </p>
-              </div>
+                <div class="arrest-rules">
+                    <span>
+                        Actual restraint / submission to custody
+                    </span>
+                    <span>
+                        Reasonable force
+                    </span>
+                    <span>
+                        At any time of day and night
+                    </span>
+                    <span>
+                        Bring the person to the nearest police station/jail
+                    </span>
+                </div>
             </div>
-
-          </div>
-
-        </article>
-
-
-        <article class="panel">
-
-          <div class="panel-title">
-            <span class="number">B</span>
-            <h3>Due process</h3>
-          </div>
-
-          <div class="definition-box">
-
-            <b>Procedural due process</b>
-
-            <p>
-              Ensures procedures and methods used by government
-              before depriving a person of life, liberty, or
-              property are fair and just.
+            <div class="arrest-tabs reveal">
+                <div class="tabs">
+                    <button class="tab active" data-tab="types">
+                        Types of Arrest
+                    </button>
+                    <button class="tab" data-tab="warrant">
+                        Warrant of Arrest
+                    </button>
+                    <button class="tab" data-tab="warrantless">
+                        Warrantless Arrest
+                    </button>
+                    <button class="tab" data-tab="search">
+                        Search & Seizure
+                    </button>
+                    <button class="tab" data-tab="instigation">
+                        Instigation vs Entrapment
+                    </button>
+                </div>
+                <div class="tab-panel active" id="types">
+                    <h3>Three Types of Arrest</h3>
+                    <div class="number-list">
+                        <div>
+                            <span>01</span>
+                            <p>Arrest by an officer with a warrant</p>
+                        </div>
+                        <div>
+                            <span>02</span>
+                            <p>Arrest by an officer without a warrant</p>
+                        </div>
+                        <div>
+                            <span>03</span>
+                            <p>
+                                Arrest by a private person or
+                                "citizen's arrest"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-panel" id="warrant">
+                    <h3>Warrant of Arrest</h3>
+                    <p>
+                        A warrant of arrest is a formal legal document
+                        issued by a judge that authorizes law enforcement
+                        officers to arrest a specific individual accused
+                        of committing a crime.
+                    </p>
+                    <div class="requirements">
+                        <h4>Requisites for Issuing a Warrant</h4>
+                        <ol>
+                            <li>Probable Cause</li>
+                            <li>Filing of Complaint or Information</li>
+                            <li>Judicial Review</li>
+                            <li>Specificity of the Warrant</li>
+                            <li>Execution of the Warrant</li>
+                        </ol>
+                    </div>
+                    <div class="warning-box">
+                        <strong>Life Span of Warrant</strong>
+                        <p>
+                            As long as the person stated in the warrant
+                            has not been arrested, the warrant remains valid
+                            even if several years have passed. The handout
+                            also states that the head of the office receiving
+                            the warrant for execution shall cause it to be
+                            executed within ten (10) days from receipt.
+                        </p>
+                    </div>
+                </div>
+                <div class="tab-panel" id="warrantless">
+                    <h3>Valid Warrantless Arrest</h3>
+                    <p>
+                        A peace officer effecting an arrest without a warrant
+                        may be considered valid when it falls within the
+                        circumstances identified in the handout.
+                    </p>
+                    <div class="arrest-types">
+                        <div>
+                            <span>01</span>
+                            <strong>In Flagrante Delicto</strong>
+                        </div>
+                        <div>
+                            <span>02</span>
+                            <strong>Hot Pursuit</strong>
+                        </div>
+                        <div>
+                            <span>03</span>
+                            <strong>Arrest of an Escapee</strong>
+                        </div>
+                    </div>
+                    <div class="warning-box">
+                        <strong>Information to the person arrested</strong>
+                        <p>
+                            The arresting officer shall inform the person
+                            of the authority to arrest and the cause of
+                            the arrest, plus the Miranda Warning.
+                        </p>
+                    </div>
+                </div>
+                <div class="tab-panel" id="search">
+                    <h3>Search & Seizure</h3>
+                    <p>
+                        Search refers to examination of an individual's
+                        person, house, papers or effects, or other buildings
+                        and premises to discover contraband or evidence of
+                        guilt to be used in the prosecution of a criminal action.
+                    </p>
+                    <p>
+                        Seizure is the taking of the property after being
+                        examined.
+                    </p>
+                    <div class="search-warrant">
+                        <h4>Search Warrant</h4>
+                        <p>
+                            A search warrant is an order in writing issued
+                            in the name of the People of the Philippines,
+                            directed to a peace officer, commanding him
+                            to search for personal property described
+                            therein and bring it before the court.
+                        </p>
+                        <div class="validity">
+                            <strong>10 DAYS</strong>
+                            <span>Validity period</span>
+                        </div>
+                        <h4>Personal Property to be Seized</h4>
+                        <ul>
+                            <li>Subject of the offense</li>
+                            <li>
+                                Stolen or embezzled property and proceeds
+                                or fruits of the offense
+                            </li>
+                            <li>
+                                Property used or intended to be used as
+                                the means of committing the offense
+                            </li>
+                        </ul>
+                    </div>
+                    <h4 class="margin-title">
+                        Circumstances of Warrantless Search
+                    </h4>
+                    <div class="search-grid">
+                        <span>Warrantless search incidental to lawful arrest</span>
+                        <span>Evidence in plain view</span>
+                        <span>Search of a moving vehicle</span>
+                        <span>Consented warrantless search</span>
+                        <span>Customs search</span>
+                        <span>Stop and frisk search</span>
+                        <span>Exigent and emergency circumstances</span>
+                    </div>
+                </div>
+                <div class="tab-panel" id="instigation">
+                    <h3>Instigation vs Entrapment</h3>
+                    <div class="comparison">
+                        <div class="comparison-item danger">
+                            <span>INSTIGATION</span>
+                            <p>
+                                Exists when a police officer induces a
+                                person to commit a crime. Without the
+                                inducement, the crime would not be committed.
+                            </p>
+                            <small>
+                                Example identified in the handout:
+                                sell-bust operation.
+                            </small>
+                        </div>
+                        <div class="comparison-item success">
+                            <span>ENTRAPMENT</span>
+                            <p>
+                                Refers to ways and means devised by the
+                                arresting officer to catch or apprehend
+                                a person who has committed a crime.
+                            </p>
+                            <small>
+                                Example identified in the handout:
+                                buy-bust operation.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+             EVOLUTION OF LAW
+        ========================== -->
+        <section class="section" id="evolution">
+            <div class="section-heading reveal">
+                <span class="section-number">06</span>
+                <div>
+                    <p class="section-label">EVOLUTION OF LAW</p>
+                    <h2>
+                        Major Legal Developments
+                    </h2>
+                    <p>
+                        The handout presents several historical bodies
+                        and sources of law.
+                    </p>
+                </div>
+            </div>
+            <div class="law-timeline">
+                <article class="law-item reveal">
+                    <span class="law-year">01</span>
+                    <div>
+                        <h3>Code of Hammurabi</h3>
+                        <p>
+                            The first known bodies of law, promulgated by
+                            King Hammurabi of ancient Babylon and engraved
+                            on stone tablets. It dealt with theft, ownership,
+                            sexual relationships and violence.
+                        </p>
+                    </div>
+                </article>
+                <article class="law-item reveal">
+                    <span class="law-year">02</span>
+                    <div>
+                        <h3>Roman Law</h3>
+                        <p>
+                            Derived from the Twelve Tables, a collection
+                            of basic rules related to family, religion
+                            and economic life.
+                        </p>
+                    </div>
+                </article>
+                <article class="law-item reveal">
+                    <span class="law-year">03</span>
+                    <div>
+                        <h3>Common Law</h3>
+                        <p>
+                            Traced from early English society and described
+                            as a body of early unwritten legal principles
+                            created from social customs, rules and practices.
+                        </p>
+                    </div>
+                </article>
+                <article class="law-item reveal">
+                    <span class="law-year">04</span>
+                    <div>
+                        <h3>The Magna Carta</h3>
+                        <p>
+                            Signed on June 15, 1215 by King John of England.
+                            It guarantees basic liberties for all British
+                            citizens.
+                        </p>
+                    </div>
+                </article>
+                <article class="law-item reveal">
+                    <span class="law-year">05</span>
+                    <div>
+                        <h3>Greek Laws</h3>
+                        <p>
+                            Contributed to Western thoughts about law through
+                            ideas associated with philosophers such as
+                            Socrates, Plato and Aristotle.
+                        </p>
+                    </div>
+                </article>
+                <article class="law-item reveal">
+                    <span class="law-year">06</span>
+                    <div>
+                        <h3>Canon Law</h3>
+                        <p>
+                            Also known as Ecclesiastical Law and adopted
+                            for the government of the Christian organization
+                            and its members.
+                        </p>
+                    </div>
+                </article>
+                <article class="law-item reveal">
+                    <span class="law-year">07</span>
+                    <div>
+                        <h3>Germanic Law</h3>
+                        <p>
+                            A family of customary laws from the Germanic tribes.
+                        </p>
+                    </div>
+                </article>
+                <article class="law-item reveal">
+                    <span class="law-year">08</span>
+                    <div>
+                        <h3>Philippine Laws</h3>
+                        <p>
+                            For early Filipinos, laws were both written and
+                            unwritten. Written laws were decreed and codified,
+                            while unwritten laws were based on customs
+                            and traditions.
+                        </p>
+                    </div>
+                </article>
+                <article class="law-item reveal">
+                    <span class="law-year">09</span>
+                    <div>
+                        <h3>Maragtas Code</h3>
+                        <p>
+                            Described in the handout as a written code in
+                            the pre-Spanish era and the oldest body of laws
+                            in the Philippines. It states that it was written
+                            by Datu Sumakwel of Panay in 1250 A.D.
+                        </p>
+                    </div>
+                </article>
+                <article class="law-item reveal">
+                    <span class="law-year">10</span>
+                    <div>
+                        <h3>Code of Kalantiaw</h3>
+                        <p>
+                            The handout identifies it as the second oldest
+                            legal code in the Philippines and states that
+                            it was written by Datu Kalantiaw of Panay in
+                            1433 A.D.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- =========================
+             LEGAL FOUNDATION
+        ========================== -->
+        <section class="section section-blue" id="legal-foundation">
+            <div class="section-heading light reveal">
+                <span class="section-number">07</span>
+                <div>
+                    <p class="section-label">LEGAL FOUNDATION</p>
+                    <h2>
+                        Basis of the Philippine
+                        Criminal Justice System
+                    </h2>
+                    <p>
+                        The handout states that the Philippine Criminal
+                        Justice System is based on enacted Philippine
+                        criminal law.
+                    </p>
+                </div>
+            </div>
+            <div class="foundation-intro reveal">
+                <div class="foundation-icon">§</div>
+                <div>
+                    <h3>Criminal Law</h3>
+                    <p>
+                        Criminal law is a branch of public law which defines
+                        crime, treats of their nature and provides for
+                        their punishment.
+                    </p>
+                </div>
+            </div>
+            <div class="legal-grid">
+                <article class="legal-card reveal">
+                    <span>CONSTITUTION</span>
+                    <h3>
+                        1987 Philippine Constitution
+                    </h3>
+                    <p>
+                        Article XVI, Section 6 provides that the state shall
+                        establish and maintain one police force which shall
+                        be national in scope and civilian in character,
+                        administered and controlled by a National Police
+                        Commission (NAPOLCOM).
+                    </p>
+                </article>
+                <article class="legal-card reveal">
+                    <span>RA 4864</span>
+                    <h3>Police Act of 1966</h3>
+                    <p>
+                        Enacted on September 8, 1966 and identified in the
+                        handout as creating NAPOLCOM to oversee the
+                        police function.
+                    </p>
+                </article>
+                <article class="legal-card reveal">
+                    <span>PD 765</span>
+                    <h3>Integrated National Police</h3>
+                    <p>
+                        Enacted on August 8, 1975 and established the
+                        Integrated National Police composed of the
+                        Philippine Constabulary as the national police
+                        and the integrated national police as local police.
+                    </p>
+                </article>
+                <article class="legal-card reveal">
+                    <span>RA 6975</span>
+                    <h3>DILG Act of 1990</h3>
+                    <p>
+                        Identified as the Department of Interior and Local
+                        Government Act of 1990, unifying the local and
+                        national police into the Philippine National Police.
+                    </p>
+                </article>
+                <article class="legal-card reveal">
+                    <span>RA 8551</span>
+                    <h3>PNP Reform & Reorganization Act</h3>
+                    <p>
+                        Identified in the handout as the Philippine National
+                        Police Reform and Reorganization Act of 1998.
+                    </p>
+                </article>
+            </div>
+            <div class="agencies reveal">
+                <div class="subheading light-subheading">
+                    OTHER LAW ENFORCEMENT AGENCIES
+                </div>
+                <div class="agency-grid">
+                    <span>National Bureau of Investigation</span>
+                    <span>Philippine Coast Guard</span>
+                    <span>Philippine Center on Transnational Crime</span>
+                    <span>Department of Environment and Natural Resources</span>
+                    <span>Bureau of Immigration</span>
+                    <span>Philippine Drug Enforcement Agency</span>
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+             KNOWLEDGE QUIZ
+        ========================== -->
+        <section class="section quiz-section" id="quiz">
+            <div class="section-heading reveal">
+                <span class="section-number">08</span>
+                <div>
+                    <p class="section-label">KNOWLEDGE TEST</p>
+                    <h2>
+                        Test Your Knowledge
+                    </h2>
+                    <p>
+                        Answer the questions based on the topics presented
+                        in the handout.
+                    </p>
+                </div>
+            </div>
+            <div class="quiz-card reveal">
+                <div class="quiz-top">
+                    <div>
+                        <span class="quiz-label">
+                            CLJ 1 KNOWLEDGE TEST
+                        </span>
+                        <h3 id="questionCounter">
+                            Question 1 of 10
+                        </h3>
+                    </div>
+                    <div class="score-badge">
+                        Score:
+                        <strong id="score">0</strong>
+                    </div>
+                </div>
+                <div class="quiz-progress">
+                    <div
+                        id="quizProgress"
+                        class="quiz-progress-bar"
+                    ></div>
+                </div>
+                <div id="quizContent">
+                    <!-- Questions are inserted by JavaScript -->
+                </div>
+                <div class="quiz-actions">
+                    <button
+                        id="nextQuestion"
+                        class="btn btn-primary"
+                        disabled
+                    >
+                        Next Question →
+                    </button>
+                    <button
+                        id="restartQuiz"
+                        class="btn btn-secondary hidden"
+                    >
+                        Restart Quiz
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+             REFERENCE
+        ========================== -->
+        <section class="section section-dark" id="reference">
+            <div class="section-heading light reveal">
+                <span class="section-number">09</span>
+                <div>
+                    <p class="section-label">REFERENCE</p>
+                    <h2>
+                        Primary Source
+                    </h2>
+                    <p>
+                        The educational content of this website is based
+                        only on the provided handout.
+                    </p>
+                </div>
+            </div>
+            <div class="reference-card reveal">
+                <div class="reference-mark">
+                    “
+                </div>
+                <div>
+                    <p class="reference-text">
+                        Lea M. Donato, PhD CJ, Joy Nicole C. Canutab, RCrim,
+                        Placido V. Abuan III, RCrim,
+                        <em>From Crime to Justice</em>
+                        (Philippines: Wiseman’s Book Trading, INC., 2025).
+                    </p>
+                    <div class="reference-line"></div>
+                    <span>
+                        SOURCE PRINTED AT THE BOTTOM OF THE PROVIDED HANDOUT
+                    </span>
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+             MEET THE CREATORS
+        ========================== -->
+        <section class="section creators-section" id="creators">
+            <div class="section-heading center reveal">
+                <span class="section-number">10</span>
+                <div>
+                    <p class="section-label">
+                        EDUCATIONAL PROJECT
+                    </p>
+                    <h2>
+                        Meet the Creators
+                    </h2>
+                    <p>
+                        This educational website was created as a
+                        CLJ 1 learning resource.
+                    </p>
+                </div>
+            </div>
+            <div class="creator-department reveal">
+                <span>
+                    CCJE DEPARTMENT
+                </span>
+                <strong>
+                    BSRCIM-1 BLOCK-A1
+                </strong>
+            </div>
+            <div class="creator-grid">
+                <article class="creator-card reveal">
+                    <div class="creator-avatar">
+                        C1
+                    </div>
+                    <h3>Your Name</h3>
+                    <p>Creator / Developer</p>
+                    <span>
+                        BSRCIM-1 BLOCK-A1
+                    </span>
+                </article>
+                <article class="creator-card reveal">
+                    <div class="creator-avatar">
+                        C2
+                    </div>
+                    <h3>Creator Name</h3>
+                    <p>Content / Research</p>
+                    <span>
+                        BSRCIM-1 BLOCK-A1
+                    </span>
+                </article>
+                <article class="creator-card reveal">
+                    <div class="creator-avatar">
+                        C3
+                    </div>
+                    <h3>Creator Name</h3>
+                    <p>Design / Development</p>
+                    <span>
+                        BSRCIM-1 BLOCK-A1
+                    </span>
+                </article>
+            </div>
+            <p class="creator-note">
+                Replace the creator names and roles above with your
+                actual group members.
             </p>
-
-            <div class="pill-list">
-              <span>Notice</span>
-              <span>Hearing</span>
+        </section>
+    </main>
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <div class="brand-icon">⚖</div>
+                <div>
+                    <strong>CLJ 1</strong>
+                    <span>
+                        Introduction to Philippine
+                        Criminal Justice System
+                    </span>
+                </div>
             </div>
-
-          </div>
-
-
-          <div class="definition-box">
-
-            <b>Substantive due process</b>
-
             <p>
-              Protects individuals from unreasonable,
-              oppressive, or arbitrary laws, regardless
-              of the procedure used to enforce them.
+                Educational website created from the provided
+                CLJ 1 handout only.
             </p>
-
-          </div>
-
-        </article>
-
-      </div>
-
-
-      <div class="victimless">
-
-        <div>
-
-          <span class="eyebrow">
-            Victimless crimes
-          </span>
-
-          <h3>
-            Crimes against the law with no private offended party
-          </h3>
-
-          <p>
-            The handout describes these as crimes against the law
-            that only harm the individual who consented to engage
-            in them.
-          </p>
-
         </div>
-
-
-        <div class="example-row">
-          <span>Gambling</span>
-          <span>Prostitution</span>
-          <span>Possession of Firearms</span>
-          <span>Drug-related cases</span>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= FIVE PILLARS ================= -->
-    <section class="section blue-section" id="pillars">
-
-      <div class="section-heading light">
-
-        <div>
-          <span class="eyebrow">02 • System map</span>
-
-          <h2>
-            The five pillars of the Philippine Criminal Justice System
-          </h2>
-        </div>
-
-        <p>
-          The handout identifies the Philippine Criminal Justice
-          System as an adversarial approach with five components.
-        </p>
-
-      </div>
-
-
-      <div class="pillar-map">
-
-        <div class="pillar-center">
-          <span>PHILIPPINE</span>
-
-          <strong>
-            CRIMINAL<br />
-            JUSTICE<br />
-            SYSTEM
-          </strong>
-
-          <small>Due process</small>
-        </div>
-
-
-        <button
-          class="pillar p1"
-          data-pillar="Law Enforcement"
-        >
-          01<br />
-          <b>Law Enforcement</b>
-        </button>
-
-
-        <button
-          class="pillar p2"
-          data-pillar="Prosecution"
-        >
-          02<br />
-          <b>Prosecution</b>
-        </button>
-
-
-        <button
-          class="pillar p3"
-          data-pillar="Courts"
-        >
-          03<br />
-          <b>Courts</b>
-        </button>
-
-
-        <button
-          class="pillar p4"
-          data-pillar="Corrections"
-        >
-          04<br />
-          <b>Corrections</b>
-        </button>
-
-
-        <button
-          class="pillar p5"
-          data-pillar="Community"
-        >
-          05<br />
-          <b>Community</b>
-        </button>
-
-      </div>
-
-
-      <div class="pillar-detail" id="pillarDetail">
-
-        <div class="detail-icon">01</div>
-
-        <div>
-
-          <h3>Law Enforcement</h3>
-
-          <p>
-            The prime mover or initiator of the criminal justice
-            cycle. The first pillar consists mainly of the PNP.
-            The PNP leads in investigation and gathering of evidence
-            and responds to violations of peace and safety in
-            the community.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="comparison">
-
-        <div class="compare-card">
-
-          <span class="compare-label">
-            US Criminal Justice System
-          </span>
-
-          <strong>
-            Inquisitorial in nature
-          </strong>
-
-          <p>
-            Composed of three components:
-            law enforcement, courts, and corrections.
-          </p>
-
-        </div>
-
-
-        <div class="compare-card featured">
-
-          <span class="compare-label">
-            Philippine Criminal Justice System
-          </span>
-
-          <strong>
-            Adversarial approach
-          </strong>
-
-          <p>
-            Five components: Law Enforcement, Prosecution,
-            Court, Corrections, and the Community.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= STRUCTURES ================= -->
-    <section class="section" id="structures">
-
-      <div class="section-heading">
-
-        <div>
-          <span class="eyebrow">
-            03 • Structure &amp; foundations
-          </span>
-
-          <h2>
-            From law to the justice system
-          </h2>
-        </div>
-
-        <p>
-          Tap an item to reveal a short handout-based explanation.
-        </p>
-
-      </div>
-
-
-      <div class="structure-grid">
-
-        <div class="law-flow">
-
-          <div class="flow-node active">
-            Criminal Law
-            <span>Branch of public law</span>
-          </div>
-
-          <div class="flow-line"></div>
-
-          <div class="flow-node">
-            Criminal Justice System
-            <span>State machinery</span>
-          </div>
-
-          <div class="flow-line"></div>
-
-          <div class="flow-node">
-            Five Pillars
-            <span>Due process</span>
-          </div>
-
-        </div>
-
-
-        <div class="accordion" id="lawAccordion">
-
-          <button class="accordion-item open">
+        <div class="footer-bottom">
             <span>
-              Concept of the Criminal Justice System
+                © <span id="year"></span> CLJ 1 Educational Project
             </span>
-            <b>+</b>
-          </button>
-
-          <div class="accordion-content">
-            The CJS is a machinery used by the state to enforce
-            rules of conduct necessary for the protection of life
-            and property, and to maintain peace and order.
-          </div>
-
-
-          <button class="accordion-item">
-            <span>As a social institution</span>
-            <b>+</b>
-          </button>
-
-          <div class="accordion-content">
-            CJS attempts to meet society's needs for law and order.
-          </div>
-
-
-          <button class="accordion-item">
-            <span>As a system</span>
-            <b>+</b>
-          </button>
-
-          <div class="accordion-content">
-            CJS depends on due process involving the five pillars.
-          </div>
-
-
-          <button class="accordion-item">
-            <span>Comparative Criminal Justice</span>
-            <b>+</b>
-          </button>
-
-          <div class="accordion-content">
-            Looks into different model countries to investigate
-            and evaluate a national system of justice in terms
-            of criminal justice process, culture, and institutions.
-          </div>
-
-
-          <button class="accordion-item">
-            <span>Basis of the Philippine CJS</span>
-            <b>+</b>
-          </button>
-
-          <div class="accordion-content">
-            It is based on the enacted Philippine Criminal Law.
-            Only violations of criminal law are being considered
-            and processed in the Criminal Justice System.
-          </div>
-
+            <a href="#top">
+                Back to top ↑
+            </a>
         </div>
-
-      </div>
-
-
-      <div class="section-heading compact">
-
-        <div>
-          <span class="eyebrow">
-            Evolution of law
-          </span>
-
-          <h2>
-            Historical legal foundations
-          </h2>
-        </div>
-
-      </div>
-
-
-      <div class="history-grid">
-
-        <article>
-          <b>Code of Hammurabi</b>
-
-          <p>
-            First known bodies of law; promulgated by King
-            Hammurabi of ancient Babylon and engraved on stone tablets.
-          </p>
-        </article>
-
-
-        <article>
-          <b>Roman Law</b>
-
-          <p>
-            Derived from the Twelve Tables, a collection of basic
-            rules related to family, religion and economic life.
-          </p>
-        </article>
-
-
-        <article>
-          <b>Common Law</b>
-
-          <p>
-            Traced from early English society; early unwritten
-            legal principles created from social customs,
-            rules and practices.
-          </p>
-        </article>
-
-
-        <article>
-          <b>The Magna Carta</b>
-
-          <p>
-            Signed June 15, 1215 by King John of England;
-            the handout states it guarantees basic liberties
-            for British citizens.
-          </p>
-        </article>
-
-
-        <article>
-          <b>Greek Laws</b>
-
-          <p>
-            Contributed to Western thoughts about law through
-            ideas of philosophers like Socrates, Plato and Aristotle.
-          </p>
-        </article>
-
-
-        <article>
-          <b>Canon Law</b>
-
-          <p>
-            Also known as Ecclesiastical Law; adopted for the
-            government of the Christian organization and its members.
-          </p>
-        </article>
-
-
-        <article>
-          <b>Germanic Law</b>
-
-          <p>
-            A family of customary laws from the Germanic tribes.
-          </p>
-        </article>
-
-
-        <article>
-          <b>Philippine Laws</b>
-
-          <p>
-            For early Filipinos, laws were both written and unwritten.
-            Written laws were decreed and codified; unwritten laws
-            were based on customs and traditions.
-          </p>
-        </article>
-
-
-        <article>
-          <b>Maragtas Code</b>
-
-          <p>
-            A written code in the pre-Spanish era; the handout
-            identifies it as the oldest body of laws in the Philippines
-            and says it was written by Datu Sumakwel of Panay in
-            1250 A.D.
-          </p>
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= ARREST ================= -->
-    <section class="section" id="arrest">
-
-      <div class="section-heading">
-
-        <div>
-          <span class="eyebrow">
-            04 • Law enforcement
-          </span>
-
-          <h2>
-            Arrest, warrants &amp; search
-          </h2>
-        </div>
-
-        <p>
-          Use the tabs to study the rules presented in the handouts.
-        </p>
-
-      </div>
-
-
-      <div class="tab-shell">
-
-        <div class="tabs" role="tablist">
-
-          <button
-            class="tab active"
-            data-tab="arrestTab"
-          >
-            Arrest
-          </button>
-
-          <button
-            class="tab"
-            data-tab="warrantTab"
-          >
-            Warrant of Arrest
-          </button>
-
-          <button
-            class="tab"
-            data-tab="searchTab"
-          >
-            Search &amp; Seizure
-          </button>
-
-          <button
-            class="tab"
-            data-tab="agencyTab"
-          >
-            Agencies
-          </button>
-
-        </div>
-
-
-        <!-- ARREST TAB -->
-        <div class="tab-panel active" id="arrestTab">
-
-          <div class="arrest-types">
-
-            <div class="type-card">
-              <span>01</span>
-
-              <h3>
-                Officer with a warrant
-              </h3>
-
-              <p>
-                Arrest by an officer with a warrant.
-              </p>
-            </div>
-
-
-            <div class="type-card">
-              <span>02</span>
-
-              <h3>
-                Officer without a warrant
-              </h3>
-
-              <p>
-                Valid warrantless arrest may occur in
-                the listed circumstances.
-              </p>
-            </div>
-
-
-            <div class="type-card">
-              <span>03</span>
-
-              <h3>
-                Private person / citizen's arrest
-              </h3>
-
-              <p>
-                Arrest by a private person or “citizen's arrest”
-                without a warrant.
-              </p>
-            </div>
-
-          </div>
-
-
-          <div class="rule-box">
-
-            <h3>
-              How an arrest should be made
-            </h3>
-
-            <ol>
-              <li>
-                By actual restraint/submission to the custody
-                of the person making the arrest.
-              </li>
-
-              <li>
-                Reasonable force.
-              </li>
-            </ol>
-
-            <p>
-              <b>When:</b>
-              At any time of the day and night.
-            </p>
-
-            <p>
-              <b>After arrest:</b>
-              Bring the person to the nearest police station/jail.
-            </p>
-
-          </div>
-
-
-          <div class="warning-grid">
-
-            <div>
-
-              <h3>
-                Valid warrantless arrest
-              </h3>
-
-              <ol>
-                <li>In flagrante delicto arrest</li>
-                <li>Hot pursuit arrest</li>
-                <li>Arrest of an escapee</li>
-              </ol>
-
-            </div>
-
-
-            <div>
-
-              <h3>
-                Officer must inform the person
-              </h3>
-
-              <ol>
-                <li>Authority to arrest</li>
-                <li>Cause of the arrest</li>
-                <li>Miranda Warning / Miranda Rights</li>
-              </ol>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- WARRANT TAB -->
-        <div class="tab-panel" id="warrantTab">
-
-          <div class="definition-hero">
-
-            <div class="big-symbol">
-              W
-            </div>
-
-            <div>
-
-              <h3>
-                Warrant of Arrest
-              </h3>
-
-              <p>
-                A formal legal document issued by a judge that
-                authorizes law enforcement officers to arrest a
-                specific individual accused of committing a crime.
-                It is an order in writing issued in the name of the
-                People of the Philippines, signed by the judge and
-                directed to a peace officer.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <h3>
-            Requisites for issuing a warrant of arrest
-          </h3>
-
-
-          <div class="check-list">
-
-            <div>
-              01
-              <span>Probable Cause</span>
-              <small>Rule 113, Rules of Court</small>
-            </div>
-
-            <div>
-              02
-              <span>Filing of Complaint or Information</span>
-              <small>
-                Revised Rules of Criminal Procedure, Rule 112
-              </small>
-            </div>
-
-            <div>
-              03
-              <span>Judicial Review</span>
-              <small>
-                Revised Rules of Criminal Procedure, Rule 113
-              </small>
-            </div>
-
-            <div>
-              04
-              <span>Specificity of the Warrant</span>
-              <small>
-                Revised Rules of Criminal Procedure, Rule 113
-              </small>
-            </div>
-
-            <div>
-              05
-              <span>Execution of the Warrant</span>
-              <small>
-                Philippine National Police Operational Procedures
-              </small>
-            </div>
-
-          </div>
-
-
-          <div class="mini-note">
-
-            <b>Life span:</b>
-
-            As long as the person stated in the warrant has not
-            been arrested, the handout states that it remains valid
-            even if several years have lapsed. The head of the office
-            to whom it was delivered shall cause execution within
-            ten (10) days from receipt.
-
-          </div>
-
-        </div>
-
-
-        <!-- SEARCH TAB -->
-        <div class="tab-panel" id="searchTab">
-
-          <div class="definition-hero">
-
-            <div class="big-symbol">
-              ⌕
-            </div>
-
-            <div>
-
-              <h3>
-                Search &amp; Seizure
-              </h3>
-
-              <p>
-                <b>Search</b> refers to examination of an individual's
-                person, house, papers or effects, or other buildings
-                and premises to discover contraband or evidence of
-                guilt to be used in prosecution of a criminal action.
-
-                <b>Seizure</b> is the taking of the property after
-                being examined.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div class="two-col-list">
-
-            <div>
-
-              <h3>
-                Search warrant
-              </h3>
-
-              <ul>
-                <li>
-                  Order in writing issued in the name
-                  of the People of the Philippines.
-                </li>
-
-                <li>
-                  Signed by a judge and directed to a peace officer.
-                </li>
-
-                <li>
-                  Commands a search for personal property described
-                  therein and to bring it before the court.
-                </li>
-
-                <li>
-                  Validity period: ten (10) days.
-                </li>
-
-                <li>
-                  Can be served only once within its validity period.
-                </li>
-              </ul>
-
-            </div>
-
-
-            <div>
-
-              <h3>
-                Property that may be seized
-              </h3>
-
-              <ul>
-                <li>
-                  Subject of the offense.
-                </li>
-
-                <li>
-                  Stolen or embezzled and other proceeds/fruits
-                  of the offense.
-                </li>
-
-                <li>
-                  Used or intended to be used as the means
-                  of the commission of the offense.
-                </li>
-              </ul>
-
-            </div>
-
-          </div>
-
-
-          <h3>
-            Circumstances of warrantless search
-          </h3>
-
-          <div class="tag-cloud">
-
-            <span>Incidental to lawful arrest</span>
-            <span>Plain view</span>
-            <span>Moving vehicle</span>
-            <span>Consented search</span>
-            <span>Customs search</span>
-            <span>Stop and frisk</span>
-            <span>
-              Exigent &amp; emergency circumstances
-            </span>
-
-          </div>
-
-
-          <div class="instigation">
-
-            <div>
-
-              <b>Instigation</b>
-
-              <p>
-                Police officer induces a person to commit a crime
-                that would not otherwise be committed; the handout
-                says this is not valid.
-              </p>
-
-            </div>
-
-
-            <div>
-
-              <b>Entrapment</b>
-
-              <p>
-                Means devised by the arresting officer to catch
-                or apprehend a person who has committed a crime;
-                the criminal mind originates from the accused himself.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- AGENCIES TAB -->
-        <div class="tab-panel" id="agencyTab">
-
-          <div class="agency-grid">
-
-            <div>
-              <b>Philippine National Police</b>
-
-              <p>
-                First line of defense; mostly coordinated by
-                government agencies in implementation of laws;
-                under DILG.
-              </p>
-            </div>
-
-
-            <div>
-              <b>National Bureau of Investigation</b>
-
-              <p>
-                Highly trained investigative body, functionally
-                integrated and national in scope; under DOJ.
-              </p>
-            </div>
-
-
-            <div>
-              <b>Philippine Coast Guard</b>
-
-              <p>
-                Vanguard against entry of unsafe foreign vessels;
-                attached to DOTR, and in times of war becomes
-                attached to DND.
-              </p>
-            </div>
-
-
-            <div>
-              <b>Philippine Center on Transnational Crime</b>
-
-              <p>
-                Formulates and implements a concerted program
-                of action for prevention and control of transnational
-                crime; under direct supervision of the Office
-                of the President.
-              </p>
-            </div>
-
-
-            <div>
-              <b>
-                Department of Environment and Natural Resources
-              </b>
-
-              <p>
-                Tasked with enforcement of environmental laws
-                of the Philippines.
-              </p>
-            </div>
-
-
-            <div>
-              <b>Bureau of Immigration</b>
-
-              <p>
-                Enforces immigration laws and ensures foreigners
-                comply with existing laws.
-              </p>
-            </div>
-
-
-            <div>
-              <b>Philippine Drug Enforcement Agency</b>
-
-              <p>
-                Primarily concerned with enforcement of drug laws;
-                under the Office of the President.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- PNP LEGAL FOUNDATION -->
-      <div class="law-foundation">
-
-        <span class="eyebrow">
-          Legal foundation of the PNP
-        </span>
-
-        <div class="foundation-grid">
-
-          <div>
-
-            <b>
-              1987 Philippine Constitution,
-              Art. XVI, Sec. 6
-            </b>
-
-            <p>
-              The state shall establish and maintain one police
-              force, national in scope and civilian in character,
-              administered and controlled by NAPOLCOM.
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <b>RA 4864</b>
-
-            <p>
-              Police Act of 1966; created NAPOLCOM
-              to oversee the police function.
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <b>PD 765</b>
-
-            <p>
-              Enacted August 8, 1975; established
-              the Integrated National Police.
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <b>RA 6975</b>
-
-            <p>
-              Department of Interior and Local Government
-              Act of 1990; unified local and national police
-              into the PNP.
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <b>RA 8551</b>
-
-            <p>
-              Philippine National Police Reform and
-              Reorganization Act of 1998.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= CHALLENGE ================= -->
-    <section
-      class="section challenge-section"
-      id="challenge"
-    >
-
-      <div class="section-heading">
-
-        <div>
-
-          <span class="eyebrow">
-            05 • Active recall
-          </span>
-
-          <h2>
-            Challenge cards
-          </h2>
-
-        </div>
-
-        <p>
-          Flip each card and recall the term before checking the answer.
-        </p>
-
-      </div>
-
-
-      <div class="challenge-grid">
-
-        <button class="flip-card">
-
-          <span class="front">
-
-            <small>CHALLENGE 01</small>
-
-            <b>
-              Fairness of the processes by which decisions are made.
-            </b>
-
-            <em>
-              Tap to reveal
-            </em>
-
-          </span>
-
-
-          <span class="back">
-
-            <small>ANSWER</small>
-
-            <b>
-              Procedural Justice
-            </b>
-
-            <em>
-              Focuses on fairness of decision-making processes.
-            </em>
-
-          </span>
-
-        </button>
-
-
-        <button class="flip-card">
-
-          <span class="front">
-
-            <small>CHALLENGE 02</small>
-
-            <b>
-              Protects against unreasonable, oppressive,
-              or arbitrary laws.
-            </b>
-
-            <em>
-              Tap to reveal
-            </em>
-
-          </span>
-
-
-          <span class="back">
-
-            <small>ANSWER</small>
-
-            <b>
-              Substantive Due Process
-            </b>
-
-            <em>
-              It concerns the law itself, regardless
-              of enforcement procedure.
-            </em>
-
-          </span>
-
-        </button>
-
-
-        <button class="flip-card">
-
-          <span class="front">
-
-            <small>CHALLENGE 03</small>
-
-            <b>
-              One of the three valid warrantless
-              arrest circumstances.
-            </b>
-
-            <em>
-              Tap to reveal
-            </em>
-
-          </span>
-
-
-          <span class="back">
-
-            <small>ANSWER</small>
-
-            <b>
-              Hot Pursuit Arrest
-            </b>
-
-            <em>
-              Listed with in flagrante delicto arrest
-              and arrest of an escapee.
-            </em>
-
-          </span>
-
-        </button>
-
-
-        <button class="flip-card">
-
-          <span class="front">
-
-            <small>CHALLENGE 04</small>
-
-            <b>
-              Police catch or apprehend someone whose
-              criminal intent originated from himself.
-            </b>
-
-            <em>
-              Tap to reveal
-            </em>
-
-          </span>
-
-
-          <span class="back">
-
-            <small>ANSWER</small>
-
-            <b>
-              Entrapment
-            </b>
-
-            <em>
-              The handout contrasts it with invalid instigation.
-            </em>
-
-          </span>
-
-        </button>
-
-
-        <button class="flip-card">
-
-          <span class="front">
-
-            <small>CHALLENGE 05</small>
-
-            <b>
-              Written code in the pre-Spanish era.
-            </b>
-
-            <em>
-              Tap to reveal
-            </em>
-
-          </span>
-
-
-          <span class="back">
-
-            <small>ANSWER</small>
-
-            <b>
-              Maragtas Code
-            </b>
-
-            <em>
-              The handout describes it as the oldest body
-              of laws in the Philippines.
-            </em>
-
-          </span>
-
-        </button>
-
-
-        <button class="flip-card">
-
-          <span class="front">
-
-            <small>CHALLENGE 06</small>
-
-            <b>
-              Crimes against the law with no private
-              offended party.
-            </b>
-
-            <em>
-              Tap to reveal
-            </em>
-
-          </span>
-
-
-          <span class="back">
-
-            <small>ANSWER</small>
-
-            <b>
-              Victimless Crimes
-            </b>
-
-            <em>
-              Examples listed include gambling, prostitution,
-              possession of firearms, and drug-related cases.
-            </em>
-
-          </span>
-
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= QUIZ ================= -->
-    <section
-      class="section quiz-section"
-      id="quiz"
-    >
-
-      <div class="section-heading">
-
-        <div>
-
-          <span class="eyebrow">
-            06 • Knowledge check
-          </span>
-
-          <h2>
-            Handout quiz
-          </h2>
-
-        </div>
-
-        <p>
-          Ten single-answer questions. All answers come only
-          from the supplied handouts.
-        </p>
-
-      </div>
-
-
-      <div class="quiz-card">
-
-        <div class="quiz-top">
-
-          <div>
-
-            <span id="questionCounter">
-              Question 1 of 10
-            </span>
-
-            <div class="quiz-progress">
-              <span id="quizProgress"></span>
-            </div>
-
-          </div>
-
-
-          <span
-            class="score-badge"
-            id="scoreBadge"
-          >
-            Score: 0
-          </span>
-
-        </div>
-
-
-        <div id="quizContent"></div>
-
-
-        <div class="quiz-actions">
-
-          <button
-            class="btn secondary"
-            id="nextQuestion"
-            type="button"
-            disabled
-          >
-            Next Question
-          </button>
-
-          <button
-            class="btn primary"
-            id="restartQuiz"
-            type="button"
-          >
-            Restart
-          </button>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= REFERENCE ================= -->
-    <section
-      class="section reference-section"
-      id="reference"
-    >
-
-      <div class="reference-card">
-
-        <div class="book-icon">
-          ▤
-        </div>
-
-        <div>
-
-          <span class="eyebrow">
-            07 • Reference
-          </span>
-
-          <h2>
-            Single source used for this website
-          </h2>
-
-          <p>
-            Lea M. Donato, PhD CJ, Joy Nicole C. Canutab, RCrim,
-            Placido V. Abuan III, RCrim,
-            <i>From Crime to Justice</i>
-            (Philippines: Wiseman’s Book Trading, INC., 2025).
-          </p>
-
-          <p class="muted">
-            The educational content on this site is limited
-            to the information visible in the supplied handouts.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- ================= FOOTER ================= -->
-  <footer>
-
-    <div>
-      <b>CLJ 1 Reviewer</b>
-      <span>Educational study site • Handout-based</span>
-    </div>
-
+    </footer>
+    <!-- =========================
+         BACK TO TOP
+    ========================== -->
     <button
-      class="back-top"
-      id="backTop"
-      type="button"
+        id="backToTop"
+        class="back-to-top"
+        aria-label="Back to top"
     >
-      ↑ Back to top
+        ↑
     </button>
-
-  </footer>
-
-
-  <script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
-
