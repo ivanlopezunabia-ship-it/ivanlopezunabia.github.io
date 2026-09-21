@@ -469,8 +469,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </ul>
 
             <div class="source-note">
-                Content is presented according to the
-                provided CLJ 1 handout.
+                
             </div>
         `;
 
