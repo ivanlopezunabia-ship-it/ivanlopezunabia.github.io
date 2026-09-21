@@ -379,11 +379,11 @@ document.addEventListener("DOMContentLoaded", () => {
             title: "Prosecution",
             icon: "⚖",
             text:
-                "The second pillar of the Philippine Criminal Justice System identified in the handout.",
+                "The prosecution is the gate keepers or criminal justice system, this second pillar is primarily concerned with the investigation of the complaint filed before its office.",
             bullets: [
-                "Prosecution is identified as one of the five pillars of the Philippine Criminal Justice System.",
-                "It forms part of the criminal justice process described in the handout.",
-                "The five pillars work together as components of the criminal justice system."
+                "Prosecution is the process wherein the accusation is brough before the court.",
+                "It also determine the guilt or innocence of the accused.",
+                "The prosecution ensure that the persons are tried in court of law and sentenced if convicted."
             ]
         },
 
@@ -392,11 +392,11 @@ document.addEventListener("DOMContentLoaded", () => {
             title: "Courts",
             icon: "§",
             text:
-                "The third pillar identified in the Philippine Criminal Justice System.",
+                "Court is the body to which the public administration of justice is delegated, being a tribunal officially assembled under authority of law at the approlriate time and place for the administration of justice through which the stae enforces its sovereign rights and powers.",
             bullets: [
-                "Courts are identified as one of the five pillars.",
-                "The courts form part of the criminal justice process.",
-                "The handout connects the criminal justice system with due process."
+                "Courts is the third pillar of criminal justice system.",
+                "The courts known as the corner stone of criminal justice system",
+                "The court determines if the person with acriminal offense is guilty or not."
             ]
         },
 
@@ -405,11 +405,11 @@ document.addEventListener("DOMContentLoaded", () => {
             title: "Corrections",
             icon: "▣",
             text:
-                "The fourth pillar identified in the Philippine Criminal Justice System.",
+                "The branch of justice administration that handles individuals after they found guilty and sentenced by the court.",
             bullets: [
-                "Corrections is identified as one of the five pillars.",
-                "It forms part of the criminal justice system.",
-                "The five pillars function as components of the criminal justice process."
+                "There main goal is to  punish wrongdoers while reforming them so they can return to society..",
+                "Correction is responsible for the custody,supervision, and rehabilitation of convicted offenders",
+                "Bureau of Corrections(BuCor) is the agencies involved."
             ]
         },
 
@@ -418,11 +418,11 @@ document.addEventListener("DOMContentLoaded", () => {
             title: "Community",
             icon: "◎",
             text:
-                "The fifth pillar identified in the Philippine Criminal Justice System.",
+                "The community serves as the informal fifth pillar of the Philippine criminal justice system, acting as the foundation for crime prevention, offender raintegration, and public safety.",
             bullets: [
-                "Community is identified as one of the five pillars.",
-                "The community forms part of the criminal justice system.",
-                "The handout identifies the five pillars as components of the Philippine Criminal Justice System."
+                "The role of community is crime prevention and promotes peace and order..",
+                "Citezens, families, schools, religous groups, and local barangays work to prevent crime and support rehabilitation.",
+                "The Department of the Interior and Local Goverment(DILG) is one of the angencies involved."
             ]
         }
 
