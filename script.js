@@ -468,7 +468,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     .join("")}
             </ul>
 
-            <div class="source-note">
                 
             </div>
         `;
